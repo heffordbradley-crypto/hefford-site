@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hefford Services — Never Miss a Job Again</title>
+<meta name="description" content="Miss a call, and we text the customer back in 30 seconds, book the job, and ping your phone — while you're still on the tools. First month free.">
+<meta property="og:title" content="Every missed call is a customer dialling your competitor.">
+<meta property="og:description" content="Hefford Services answers the calls you can't — auto text-back, job booked, you do nothing. First month free.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#7C2727">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23262526'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-weight='bold' font-size='20' fill='%237C2727' text-anchor='middle'%3EH%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --maroon:#7C2727; --maroon-dk:#5f1d1d; --charcoal:#262526;
+  --paper:#e9e9ec; --paper-2:#e0e0e4; --line:#d1d1d6;
+  --ink:#201f1f; --dim:#6b6866; --ok:#2f8f4e;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Archivo',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.08;letter-spacing:-.01em}
+a{color:inherit}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(233,233,236,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;letter-spacing:.01em}
+.monogram{width:34px;height:34px;border-radius:8px;background:var(--charcoal);color:var(--maroon);display:grid;place-items:center;font-family:'Fraunces',Georgia,serif;font-weight:700;font-size:20px}
+.brand-logo{height:42px;width:auto;border-radius:8px;display:block}
+.btn{display:inline-block;background:var(--maroon);color:#fff;font-weight:700;padding:13px 22px;border-radius:10px;text-decoration:none;border:none;cursor:pointer;font-size:15px;transition:.15s;box-shadow:0 6px 18px rgba(124,39,39,.28)}
+.btn:hover{background:var(--maroon-dk);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--maroon);box-shadow:none;border:1.5px solid var(--maroon)}
+.btn.lg{padding:16px 30px;font-size:17px}
+.nav .btn{padding:10px 18px;font-size:14px}
+
+/* hero */
+.hero{padding:76px 0 60px;text-align:center}
+.eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--maroon);margin-bottom:22px}
+.hero h1{font-size:clamp(34px,6.4vw,60px);font-weight:700;max-width:14ex;margin:0 auto}
+.hero .sub{margin:24px auto 0;max-width:52ch;font-size:clamp(16px,2.2vw,20px);color:var(--dim)}
+.cta-row{margin-top:34px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.micro{margin-top:16px;font-size:14px;color:var(--dim)}
+
+/* stat strip */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:56px}
+.stat{background:var(--paper);padding:26px 18px;text-align:center}
+.stat b{display:block;font-family:'Fraunces',serif;font-size:clamp(26px,4vw,38px);color:var(--maroon);font-weight:700}
+.stat span{font-size:14px;color:var(--dim);display:block;margin-top:6px}
+
+/* sections */
+section{padding:64px 0}
+.section-head{text-align:center;max-width:60ch;margin:0 auto 44px}
+.section-head h2{font-size:clamp(27px,4.4vw,40px);font-weight:700}
+.section-head p{margin-top:14px;color:var(--dim);font-size:17px}
+
+/* problem band */
+.band{background:var(--maroon);color:#fff}
+.band .section-head h2{color:#fff}
+.band .section-head p{color:rgba(255,255,255,.85)}
+.band .stat b{color:#e6a5a5}
+
+/* how it works */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px 24px}
+.step .n{width:38px;height:38px;border-radius:9px;background:var(--maroon);color:#fff;display:grid;place-items:center;font-weight:800;font-family:'Fraunces',serif;margin-bottom:16px}
+.step h3{font-size:20px;font-weight:700;margin-bottom:8px}
+.step p{color:var(--dim);font-size:15px}
+
+/* demo */
+.demo-wrap{display:flex;flex-direction:column;align-items:center;gap:20px}
+.demo-frame{width:min(460px,92vw);aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.18);background:#0c0c0e}
+.demo-frame iframe{width:100%;height:100%;border:0;display:block}
+
+/* offer */
+.offer{background:linear-gradient(180deg,#fff,var(--paper-2));border:1px solid var(--line);border-radius:20px;padding:44px;text-align:center;max-width:720px;margin:0 auto}
+.offer h2{font-size:clamp(26px,4vw,36px);font-weight:700}
+.offer ul{list-style:none;margin:26px auto;max-width:44ch;text-align:left;display:grid;gap:12px}
+.offer li{display:flex;gap:11px;align-items:flex-start;font-size:16px}
+.offer li::before{content:"✓";color:var(--ok);font-weight:800;flex:none}
+.offer .roi{font-family:'Fraunces',serif;font-size:clamp(19px,3vw,25px);color:var(--maroon);font-weight:700;margin-top:14px}
+.offer .founder{margin-top:20px;font-size:14px;color:var(--dim)}
+
+/* faq */
+.faq{max-width:640px;margin:0 auto;display:grid;gap:14px}
+.qa{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.qa h3{font-size:18px;font-weight:700;margin-bottom:6px}
+.qa p{color:var(--dim);font-size:15px}
+
+/* form */
+.lead{background:var(--maroon);color:#fff;border-radius:20px;padding:44px;max-width:640px;margin:0 auto;text-align:center}
+.lead h2{color:#fff;font-size:clamp(25px,4vw,34px);font-weight:700}
+.lead p{color:rgba(255,255,255,.85);margin:12px auto 28px;max-width:46ch}
+.lead form{display:grid;gap:12px;max-width:400px;margin:0 auto}
+.lead input{width:100%;padding:14px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.96);color:#201f1f;font:inherit;font-size:16px}
+.lead input::placeholder{color:#8a8a8a}
+.lead input:focus{outline:none;border-color:#fff;background:#fff}
+.lead .btn{width:100%;margin-top:4px;background:#fff;color:var(--maroon);box-shadow:0 6px 18px rgba(0,0,0,.22)}
+.lead .btn:hover{background:#f1efee}
+.lead .alt{margin-top:18px;font-size:14px;color:rgba(255,255,255,.85)}
+.lead .alt a{color:#fff;font-weight:700;text-decoration:underline}
+
+/* footer */
+footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:var(--dim);font-size:14px}
+footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink)}
+
+@media(max-width:720px){
+  .stats,.steps{grid-template-columns:1fr}
+  section{padding:48px 0}
+  .offer,.lead{padding:30px 22px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand"><img class="brand-logo" src="logo-t.png" alt="Hefford Services logo"> Hefford Services</div>
+    <a href="#start" class="btn">Get your free month</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">For busy trades</span>
+      <h1>Every missed call is a customer dialling your competitor.</h1>
+      <p class="sub">Hefford Services answers the calls you can't. Miss one, and within 30 seconds we text the customer back, book the job, and ping your phone — while you're still under the sink.</p>
+      <div class="cta-row">
+        <a href="#start" class="btn lg">Start my free month</a>
+        <a href="#demo" class="btn ghost lg">Watch the 40-sec demo</a>
+      </div>
+      <p class="micro">No apps. No new number. No effort. Cancel anytime.</p>
+
+      <div class="stats">
+        <div class="stat"><b>1 in 4</b><span>calls to trades go unanswered</span></div>
+        <div class="stat"><b>£150–£2,000</b><span>the job you lose on each one</span></div>
+        <div class="stat"><b>~30 sec</b><span>to text them back, automatically</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="band">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>You can't answer the phone with your hands full.</h2>
+        <p>So the call rings out. They don't leave a voicemail — they just ring the next plumber. That's a booked job, gone, and you never even knew it came in. Do that a few times a week and it's thousands a month walking out the door.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p>Set up once. Then it runs itself — you carry on with the job.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h3>They call, you're busy</h3><p>A customer rings and you can't pick up — on a job, driving, hands full. Nothing for you to do.</p></div>
+        <div class="step"><div class="n">2</div><h3>We text back in 30s</h3><p>They instantly get a friendly text from your business: "Sorry we missed you — what do you need doing?" It qualifies the job and offers times.</p></div>
+        <div class="step"><div class="n">3</div><h3>Job booked, you're pinged</h3><p>They pick a slot, it's booked, and your phone buzzes with the details. A missed call turned into money — with zero effort from you.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo" style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>See a missed call become a booked job</h2>
+        <p>40 seconds. This is exactly what your customer sees.</p>
+      </div>
+      <div class="demo-wrap">
+        <div class="demo-frame"><iframe src="demo.html?embed=1" title="Missed-call text-back demo" loading="lazy"></iframe></div>
+        <a href="#start" class="btn lg">I want this for my business</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFER -->
+  <section>
+    <div class="wrap">
+      <div class="offer">
+        <h2>Your first month is on us.</h2>
+        <p class="roi">One recovered job pays for months of service.</p>
+        <p style="color:var(--dim);margin-top:6px;font-size:17px">I set the whole thing up. You do nothing but take the extra bookings.</p>
+        <ul>
+          <li>Set up for you in under a day — I do all the work</li>
+          <li>Works with your existing number and phone</li>
+          <li>Every missed call gets a text back, automatically</li>
+          <li>Jobs booked into your diary, alerts straight to your phone</li>
+          <li>Free for the first month — cancel anytime, no tie-in</li>
+        </ul>
+        <a href="#start" class="btn lg">Claim my free month</a>
+        <p class="founder">Set up personally by Brad — local to Leicester. I do the work; you just take the calls.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:var(--paper-2)">
+    <div class="wrap">
+      <div class="section-head"><h2>Quick questions</h2></div>
+      <div class="faq">
+        <div class="qa"><h3>Do I need a new number?</h3><p>No. It works with the number you already use — nothing changes for you or your customers.</p></div>
+        <div class="qa"><h3>What does it cost?</h3><p>Your first month is free. After that it's a simple monthly fee — and one recovered job usually covers it several times over. Cancel anytime, no tie-in.</p></div>
+        <div class="qa"><h3>Is it complicated?</h3><p>Not for you. I set the whole thing up and it runs itself — you just start getting the bookings you were missing.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAD FORM -->
+  <section id="start">
+    <div class="wrap">
+      <div class="lead">
+        <h2>Stop losing jobs to missed calls</h2>
+        <p>Leave your details and I'll set up your free month — or just call me and we'll sort it in 10 minutes.</p>
+        <!-- To activate: create a free Formspree form and paste its endpoint into the action below. -->
+        <form action="https://formspree.io/f/REPLACE_ME" method="POST">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="text" name="business" placeholder="Business name" required>
+          <input type="tel" name="mobile" placeholder="Mobile number" required>
+          <input type="text" name="trade" placeholder="What you do (e.g. plumber)">
+          <button type="submit" class="btn lg">Start my free month</button>
+        </form>
+        <p class="alt">Prefer to talk? Call <a href="tel:+447557055553">07557 055553</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><img class="brand-logo" src="logo-t.png" alt="Hefford Services logo"> Hefford Services</div>
+    <p>Never miss a job again. · Leicester, UK</p>
+    <p style="margin-top:8px;font-size:13px;opacity:.75">© 2026 Hefford Services. Founder: Brad Hefford.</p>
+  </div>
+</footer>
+
+</body>
+</html>
