@@ -37,6 +37,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(233,233,236,.9);backdrop
 .btn.ghost{background:transparent;color:var(--maroon);box-shadow:none;border:1.5px solid var(--maroon)}
 .btn.lg{padding:16px 30px;font-size:17px}
 .nav .btn{padding:10px 18px;font-size:14px}
+.navtel{font-weight:700;font-size:15px;color:var(--maroon);text-decoration:none;white-space:nowrap}
+@media(max-width:520px){.navtel{display:none}}
 
 /* hero */
 .hero{padding:76px 0 60px;text-align:center}
@@ -120,7 +122,10 @@ footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink)}
 <header>
   <div class="wrap nav">
     <div class="brand"><img class="brand-logo" src="logo-t.png" alt="Hefford Services logo"> Hefford Services</div>
-    <a href="#start" class="btn">Get your free month</a>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a href="tel:+447557055553" class="navtel">📞 07557 055553</a>
+      <a href="#start" class="btn">Get your free month</a>
+    </div>
   </div>
 </header>
 
@@ -199,7 +204,7 @@ footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink)}
           <li>Free first month, then just £49/month — cancel anytime, no tie-in</li>
         </ul>
         <a href="#start" class="btn lg">Claim my free month</a>
-        <p class="founder">Set up personally by Brad — local to Leicester. I do the work; you just take the calls.</p>
+        <p class="founder">Set up personally by Brad — local to Derbyshire. I do the work; you just take the calls.</p>
       </div>
     </div>
   </section>
@@ -234,6 +239,21 @@ footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink)}
     </div>
   </section>
 
+  <!-- TRUST -->
+  <section id="trust">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why trades trust Hefford Services</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n">👤</div><h3>A local face, not a call centre</h3><p>Set up personally by Brad, based in Derbyshire. You deal with one person who answers the phone — not an overseas dashboard.</p></div>
+        <div class="step"><div class="n">🔒</div><h3>No contract, ever</h3><p>First month free, then £49/month, cancel any time in one click. If it's not catching you jobs, you walk. No tie-in, no risk.</p></div>
+        <div class="step"><div class="n">🛠️</div><h3>Done-for-you setup</h3><p>I build and configure the whole thing on the number you already advertise. You do nothing but turn up to the extra bookings.</p></div>
+      </div>
+      <!-- TESTIMONIALS: real customer quotes drop in here after the first sign-ups. Do not add placeholder/fake reviews. -->
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq" style="background:var(--paper-2)">
     <div class="wrap">
@@ -251,7 +271,7 @@ footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink)}
     <div class="wrap">
       <div class="lead">
         <h2>Stop losing jobs to missed enquiries</h2>
-        <p>Leave your details and I'll set up your free month — or just call me and we'll sort it in 10 minutes.</p>
+        <p>Leave your details and I'll set up your free month — or just call or text me on <a href="tel:+447557055553" style="color:#fff;font-weight:700;text-decoration:underline">07557 055553</a> and we'll sort it in 10 minutes.</p>
         <form action="https://formspree.io/f/mrewrdzn" method="POST">
           <input type="text" name="name" placeholder="Your name" required>
           <input type="text" name="business" placeholder="Business name" required>
@@ -259,6 +279,8 @@ footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink)}
           <input type="text" name="trade" placeholder="What you do (e.g. plumber)">
           <button type="submit" class="btn lg">Start my free month</button>
         </form>
+        <p class="alt">Prefer to talk? Call or text <a href="tel:+447557055553">07557 055553</a> · <a href="mailto:heffordbradley@gmail.com">heffordbradley@gmail.com</a></p>
+        <p class="alt" style="font-size:12px;opacity:.8">By submitting you agree we can contact you about setting up your service. We never share your details. See our <a href="/privacy.html">Privacy Policy</a>.</p>
       </div>
     </div>
   </section>
@@ -268,8 +290,9 @@ footer .brand{justify-content:center;margin-bottom:12px;color:var(--ink)}
   <div class="wrap">
     <div class="brand"><img class="brand-logo" src="logo-t.png" alt="Hefford Services logo"> Hefford Services</div>
     <p>Never miss a job again.</p>
-    <p style="margin-top:10px;font-size:13px;opacity:.85"><a href="https://billing.stripe.com/p/login/14A8wQ9Ev99s9lv5ZB38400" style="color:inherit;text-decoration:underline">Manage or cancel your subscription</a></p>
-    <p style="margin-top:8px;font-size:13px;opacity:.75">© 2026 Hefford Services. Founder: Brad Hefford.</p>
+    <p style="margin-top:12px;font-size:14px"><a href="tel:+447557055553" style="color:inherit;text-decoration:none;font-weight:700">📞 07557 055553</a> &nbsp;·&nbsp; <a href="mailto:heffordbradley@gmail.com" style="color:inherit;text-decoration:none;font-weight:700">✉️ heffordbradley@gmail.com</a></p>
+    <p style="margin-top:12px;font-size:13px;opacity:.85"><a href="/privacy.html" style="color:inherit;text-decoration:underline">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html" style="color:inherit;text-decoration:underline">Terms of Service</a> &nbsp;·&nbsp; <a href="https://billing.stripe.com/p/login/14A8wQ9Ev99s9lv5ZB38400" style="color:inherit;text-decoration:underline">Manage or cancel your subscription</a></p>
+    <p style="margin-top:8px;font-size:13px;opacity:.75">© 2026 Hefford Services — sole trader Brad Hefford, Derbyshire, UK. Contact: 07557 055553 · heffordbradley@gmail.com</p>
   </div>
 </footer>
 
