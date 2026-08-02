@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Missed-Job Calculator — Hefford Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#7C2727;--maroon-dk:#5f1d1d;--charcoal:#262526;--paper:#e9e9ec;--line:#d1d1d6;--ink:#201f1f;--dim:#6b6866;--ok:#2f8f4e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Archivo',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.5;padding:20px;max-width:520px;margin:0 auto}
+h1{font-family:'Fraunces',serif;font-size:clamp(24px,6vw,32px);font-weight:700;margin:14px 0 4px;line-height:1.1}
+.sub{color:var(--dim);font-size:15px;margin-bottom:22px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px}
+.mono{width:32px;height:32px;border-radius:8px;background:var(--charcoal);color:var(--maroon);display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:700;font-size:19px}
+label{display:block;font-weight:700;font-size:15px;margin:18px 0 6px}
+label span{font-weight:500;color:var(--dim);font-size:13px}
+input[type=number]{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font:inherit;font-size:18px;background:#fff}
+input[type=range]{width:100%;accent-color:var(--maroon);margin-top:8px}
+.rangeval{font-weight:700;color:var(--maroon)}
+.result{margin-top:26px;background:var(--maroon);color:#fff;border-radius:18px;padding:26px 22px;text-align:center}
+.result .lbl{font-size:14px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.result .big{font-family:'Fraunces',serif;font-size:clamp(40px,13vw,62px);font-weight:700;line-height:1;margin:8px 0}
+.result .per{opacity:.85;font-size:15px}
+.breakdown{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.bd{background:rgba(255,255,255,.12);border-radius:12px;padding:12px}
+.bd b{display:block;font-family:'Fraunces',serif;font-size:22px}
+.bd span{font-size:12px;opacity:.85}
+.close{margin-top:20px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+.close .roi{font-family:'Fraunces',serif;font-size:20px;color:var(--maroon);font-weight:700}
+.close p{color:var(--dim);font-size:14px;margin-top:6px}
+.foot{text-align:center;color:var(--dim);font-size:12px;margin:24px 0 10px}
+</style>
+</head>
+<body>
+<div class="brand"><div class="mono">H</div> Hefford Services</div>
+<h1>How much are missed jobs costing you?</h1>
+<p class="sub">Move the sliders to your numbers — see what walks out the door each month.</p>
+
+<label>Enquiries you miss a week <span>(on a job, driving, evenings)</span></label>
+<input type="range" id="missed" min="1" max="20" value="4" oninput="calc()">
+<div class="rangeval"><span id="missedV">4</span> a week</div>
+
+<label>Average job value <span>(£)</span></label>
+<input type="number" id="job" value="250" min="20" step="10" oninput="calc()">
+
+<label>Of those, how many would’ve booked? <span>(be conservative)</span></label>
+<input type="range" id="conv" min="10" max="90" value="50" step="5" oninput="calc()">
+<div class="rangeval"><span id="convV">50</span>%</div>
+
+<div class="result">
+  <div class="lbl">You’re leaking about</div>
+  <div class="big" id="month">£0</div>
+  <div class="per">every month in lost jobs</div>
+  <div class="breakdown">
+    <div class="bd"><b id="week">£0</b><span>per week</span></div>
+    <div class="bd"><b id="year">£0</b><span>per year</span></div>
+  </div>
+</div>
+
+<div class="close">
+  <div class="roi">Hefford catches those enquiries for £49/month.</div>
+  <p id="closeLine">That’s a fraction of one job. First month free, cancel anytime.</p>
+</div>
+
+<p class="foot">Estimate based on the numbers you enter. Internal sales tool.</p>
+
+<script>
+function gbp(n){return '£'+Math.round(n).toLocaleString('en-GB');}
+function calc(){
+  const missed=+document.getElementById('missed').value;
+  const job=+document.getElementById('job').value||0;
+  const conv=+document.getElementById('conv').value/100;
+  document.getElementById('missedV').textContent=missed;
+  document.getElementById('convV').textContent=Math.round(conv*100);
+  const week=missed*conv*job;
+  const month=week*52/12;
+  const year=week*52;
+  document.getElementById('week').textContent=gbp(week);
+  document.getElementById('month').textContent=gbp(month);
+  document.getElementById('year').textContent=gbp(year);
+  const jobsPerMonth=month/49;
+  document.getElementById('closeLine').textContent=
+    month>0 ? `That £49 pays for itself the moment it catches one job — you’re currently losing about ${gbp(month)} of them a month. First month free, cancel anytime.`
+            : 'First month free, cancel anytime.';
+}
+calc();
+</script>
+</body>
+</html>
